@@ -1,0 +1,44 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+
+#calculator{
+
+    border: 2px solid black;
+    border-radius: 15px;
+
+}
+
+#body{
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+#input{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#keyboard{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#screen{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}

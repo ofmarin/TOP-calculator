@@ -6,7 +6,8 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "dist"
+    "outDir": "./views/assets/js",
+    "rootDir": "./src"
   },
   "include": ["src"]
 }

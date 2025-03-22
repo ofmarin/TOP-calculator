@@ -11,17 +11,17 @@ function multiply(a, b) {
 function divide(a, b) {
     return a / b;
 }
-function operate(number1, operator, number2) {
-    if (operator == '+') {
+function operate(number1, operator, number2 = 0) {
+    if (operator === '+') {
         return add(number1, number2);
     }
-    else if (operator == '-') {
+    else if (operator === '-') {
         return substract(number1, number2);
     }
-    if (operator == '*') {
+    if (operator === '*') {
         return multiply(number1, number2);
     }
-    if (operator == '/') {
+    if (operator === '/') {
         return divide(number1, number2);
     }
     return 0;
@@ -46,10 +46,14 @@ for (let node of buttonList) {
     }
     else if (node.textContent === '=') {
         node.addEventListener("click", e => {
-            operationList.push(parseInt(output.textContent));
-            output.textContent = operate(operationList[0], operationList[1], operationList[2]).toString();
-            operationList = [parseInt(output.textContent)];
-            console.log(e.target, operationList);
+            if (operationList.length < 2) {
+            }
+            else {
+                operationList.push(parseInt(output.textContent));
+                output.textContent = operate(operationList[0], operationList[1], operationList[2]).toString();
+                operationList = [parseInt(output.textContent)];
+                console.log(e.target, operationList);
+            }
         });
     }
     else if (!isNaN(parseInt(node.textContent))) {

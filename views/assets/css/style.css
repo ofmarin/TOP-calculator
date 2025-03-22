@@ -68,6 +68,8 @@ output{
     margin-top: 1em;
     color: #DCD7C9 ;
     font-size:2em;
+    height: 2em;
+    width: 75%;
 }
 
 .operator{

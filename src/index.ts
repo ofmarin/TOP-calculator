@@ -18,18 +18,18 @@ function divide( a: number, b: number ) : number{
 }
 
 
-function operate(number1:number, operator:'+'|'-'|'*'|"/", number2:number) : number{
+function operate(number1:number, operator:'+'|'-'|'*'|"/", number2 = 0) : number{
 
-    if (operator == '+'){
+    if (operator === '+'){
         return add(number1, number2);
     }
-    else if (operator == '-'){
+    else if (operator === '-'){
         return substract(number1, number2);
     }
-    if (operator == '*'){
+    if (operator === '*'){
         return multiply(number1, number2);
     }
-    if (operator == '/'){
+    if (operator === '/'){
         return divide(number1, number2);
     }
     return 0;
@@ -52,7 +52,6 @@ let flag:boolean = false;
 
 // populating the buttons with event listener
 for (let node of buttonList){
-
     if (node.textContent === "Clear"){
         node.addEventListener("click", (e)=>{
             output!.textContent = '';
@@ -60,31 +59,32 @@ for (let node of buttonList){
         });
     }else if(node.textContent === '='){
         node.addEventListener("click", e =>{
+            if(operationList.length < 2){
+
+            }else{
             operationList.push(parseInt(output!.textContent!));
             output!.textContent = operate(operationList[0],operationList[1],operationList[2]).toString();
             operationList = [parseInt(output!.textContent)];
             console.log(e.target, operationList);
+            }
         })
-
     }else if(!isNaN(parseInt(node.textContent!))){
-
-
         node.addEventListener("click", (e)=>{
+
             if(operationList.length !== 0){
                 if (!flag){
                     output!.textContent = node.textContent ?? "";
                     console.log(e.target, operationList);
                     flag = true;
                 }else{
+
                     output!.textContent += node.textContent ?? "";
                     console.log(e.target, operationList);
                 }
             }else{
-
                 output!.textContent += node.textContent ?? "";
                 console.log(e.target, operationList);
             }
-
         });
     }else{
         node.addEventListener("click", e => {

@@ -60,7 +60,7 @@ for (let node of buttonList){
         });
     }else if(node.textContent === '='){
         node.addEventListener("click", e =>{
-            operationList.push(output!.textContent);
+            operationList.push(parseInt(output!.textContent!));
             output!.textContent = operate(operationList[0],operationList[1],operationList[2]).toString();
             operationList = [parseInt(output!.textContent)];
             console.log(e.target, operationList);
@@ -96,8 +96,16 @@ for (let node of buttonList){
             }
             if(operationList.length === 1){
                 operationList.push(node.textContent);
+                console.log(e.target, operationList);
             }else if(operationList.length === 0 ){
                 operationList.push(parseInt(output?.textContent!));
+                operationList.push(node.textContent);
+                console.log(e.target, operationList);
+            }else{
+                operationList.push(parseInt(output?.textContent!));
+                output!.textContent = operate(operationList[0],operationList[1],operationList[2])
+                    .toString();
+                operationList = [parseInt(output!.textContent)];
                 operationList.push(node.textContent);
                 console.log(e.target, operationList);
             }

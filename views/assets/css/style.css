@@ -8,12 +8,21 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-
+/*
+ Pallette:
+2C3930
+3F4F44
+A27B5C
+DCD7C9
+*/
 
 #calculator{
 
-    border: 2px solid black;
+
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -22,6 +31,13 @@ input[type="number"] {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    border: 1px solid dimgray;
+    border-radius: 5%;
+    width: 50%;
+    height: 50%;
+    background-color: #2C3930;
+    padding: 2em;
 }
 #input{
     align-content: center;
@@ -34,6 +50,7 @@ input[type="number"] {
     align-items: center;
     justify-content: center;
     display: flex;
+    margin-bottom: 1em;
 }
 
 #screen{
@@ -41,4 +58,80 @@ input[type="number"] {
     align-content: center;
     align-items: center;
     justify-content: center;
+    background-color: #3F4F44;
+    padding: 1em;
+    height: 300px;
+}
+
+output{
+    border: 2px solid #2C3930;
+    margin-top: 1em;
+    color: #DCD7C9 ;
+    font-size:2em;
+}
+
+.operator{
+    background-color: #A27B5C;
+}
+
+.operator:hover{
+    background-color: #DCD7C9 ; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+button{
+    background-color: #DCD7C9 ;
+    font-size:1em;
+    height: 25px;
+    width: 25px;
+}
+
+#body{
+    color: #fff;
+    padding: 15px 25px;
+    background-color: #2C3930;
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%,
+    transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55)
+    0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25),
+    inset 0px 3px 9px rgba(255, 255, 255, 0.3),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0px -8px 36px rgba(0, 0, 0, 0.3),
+    inset 0px 1px 5px rgba(255, 255, 255, 0.6),
+    2px 19px 31px rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    cursor: pointer;
+}
+
+
+
+#result{
+    background-color: darkorange;
+}
+
+button:hover {
+    background-color: #A27B5C; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+#buttons div:last-child button{
+    width: 100%;
+    background-color: #DCD7C9;
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%
+    ,transparent 86.18%)
+}
+
+button{
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%
+    ,transparent 86.18%);
+    border-radius: 14px;
 }
